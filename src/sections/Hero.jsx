@@ -4,14 +4,15 @@ import SectionContainer from "../components/SectionContainer";
 
 export default function Hero() {
   return (
-    // SectionContainer sudah ngasih max-w-6xl + mx-auto + px-6 + py-20
     <SectionContainer id="home">
+      {/* wrapper ini kita geser dikit ke kanan di mobile */}
       <div
         className="
           flex flex-col md:flex-row 
           items-center md:items-center 
           gap-14 md:gap-16
           w-full
+          translate-x-[4px] sm:translate-x-0
         "
       >
         {/* FOTO (di atas di mobile, di kanan di desktop) */}
