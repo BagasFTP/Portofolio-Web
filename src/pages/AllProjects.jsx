@@ -76,9 +76,7 @@ export default function AllProjects() {
 
         <div className="mt-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
           <p className="text-sm md:text-base text-neutral-600 max-w-2xl">
-            Explore my complete collection of projects — full-stack web
-            applications, internal tools, analytics dashboards, and UI/UX
-            explorations.
+            Explore my complete collection of data analytics projects, interactive dashboards, full-stack web applications, internal tools, and UI/UX explorations.
           </p>
 
           <p className="text-xs md:text-sm text-neutral-500">
