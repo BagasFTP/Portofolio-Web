@@ -14,7 +14,7 @@ function scrollToWithOffset(id) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  const navOffset = 90; // tinggi navbar (px) → silakan di-tweak sedikit kalau perlu
+  const navOffset = 90; // tinggi navbar (px)
   const y = el.getBoundingClientRect().top + window.scrollY - navOffset;
 
   window.scrollTo({
@@ -30,7 +30,6 @@ function HomePage() {
     const target = location.state?.scrollTo;
 
     if (target) {
-      // delay sedikit supaya layout sudah render lengkap
       const timer = setTimeout(() => {
         scrollToWithOffset(target);
       }, 80);
@@ -61,7 +60,7 @@ function ProjectsPage() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#f5f4ff]">
+    <div className="min-h-screen bg-[#f5f4ff] overflow-x-hidden">
       <Navbar />
       <ScrollToTop />
 

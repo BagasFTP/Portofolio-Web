@@ -10,6 +10,7 @@ body {
   background: #f4f4ff;
   background-image: radial-gradient(circle at top left, #dff1ff, #ece8ff, #fff4d8);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 @keyframes borderWave {
