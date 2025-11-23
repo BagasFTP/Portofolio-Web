@@ -24,7 +24,7 @@ export default function SectionContainer({
         });
       },
       {
-        threshold: 0.15, // sekitar 15% keliatan baru animasi jalan
+        threshold: 0.10, // sekitar 15% keliatan baru animasi jalan
       }
     );
 
