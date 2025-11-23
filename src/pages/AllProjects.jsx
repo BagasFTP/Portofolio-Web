@@ -1,5 +1,5 @@
 // src/pages/AllProjects.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,17 @@ import ProjectDetailModal from "../components/ProjectDetailModal";
 export default function AllProjects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
+
+  // ============================
+  // FIX: SELALU MULAI DARI ATAS
+  // ============================
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+  }, []);
 
   const handleOpenDetail = (project) => {
     setSelectedProject(project);
