@@ -1,5 +1,5 @@
 // src/pages/AllProjects.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -11,15 +11,23 @@ export default function AllProjects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
 
-  // ============================
-  // FIX: SELALU MULAI DARI ATAS
-  // ============================
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
+  // ✅ Scroll ke atas TANPA animasi, sebelum layar sempat kepaint
+  useLayoutEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+
+    const prevHtmlScroll = html.style.scrollBehavior;
+    const prevBodyScroll = body.style.scrollBehavior;
+
+    // Matikan smooth scroll dulu
+    html.style.scrollBehavior = "auto";
+    body.style.scrollBehavior = "auto";
+
+    window.scrollTo(0, 0);
+
+    // Balikin setting sebelumnya
+    html.style.scrollBehavior = prevHtmlScroll;
+    body.style.scrollBehavior = prevBodyScroll;
   }, []);
 
   const handleOpenDetail = (project) => {
@@ -41,8 +49,9 @@ export default function AllProjects() {
         transform-gpu
       "
       style={{ willChange: "transform, opacity" }}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+      // ✨ Animasi cuma fade-in, tanpa geser dari bawah
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.35, ease: [0.22, 0.61, 0.36, 1] }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10">
