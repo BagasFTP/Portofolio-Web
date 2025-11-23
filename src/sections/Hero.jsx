@@ -4,17 +4,17 @@ import SectionContainer from "../components/SectionContainer";
 
 export default function Hero() {
   return (
-    <SectionContainer id="home" className="min-h-screen flex items-center">
+    // SectionContainer sudah ngasih max-w-6xl + mx-auto + px-6 + py-20
+    <SectionContainer id="home">
       <div
         className="
-          max-w-7xl mx-auto 
-          px-6 md:px-10 
-          py-20 md:py-24 
           flex flex-col md:flex-row 
-          items-center gap-16
+          items-center md:items-center 
+          gap-14 md:gap-16
+          w-full
         "
       >
-        {/* FOTO / RIGHT VISUAL (MOBILE DI ATAS) */}
+        {/* FOTO (di atas di mobile, di kanan di desktop) */}
         <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
           <div className="relative">
             {/* GLOW BACKGROUND */}
@@ -34,7 +34,7 @@ export default function Hero() {
                 group
               "
             >
-              {/* SMALL FLOATING BUBBLES */}
+              {/* BUBBLES */}
               <div className="pointer-events-none">
                 <div
                   className="
@@ -81,7 +81,7 @@ export default function Hero() {
                 "
               />
 
-              {/* INNER RING / GLASS */}
+              {/* INNER GLASS */}
               <div
                 className="
                   absolute inset-6 rounded-full
@@ -109,7 +109,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* TEKS / LEFT SIDE */}
+        {/* TEKS */}
         <div
           className="
             w-full md:w-1/2 
